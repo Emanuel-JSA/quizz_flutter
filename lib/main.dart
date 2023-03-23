@@ -102,7 +102,10 @@ class _QuizPageState extends State<QuizPage> {
   }
 
   void quizzCheck(bool userPickedAnswer) {
-    if (quizz.isFinished()) showMyDialog(context);
+    if (quizz.isFinished()) {
+      showMyDialog(context);
+      return;
+    }
 
     bool correctAnswer = quizz.getQuestionAnswer();
     if (userPickedAnswer == correctAnswer) {
